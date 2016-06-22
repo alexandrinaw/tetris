@@ -18,6 +18,7 @@ python tetris/game.py
 * `left arrow`: makes currently falling piece move left
 * `enter`: makes currently falling piece fall all the way to the bottom
 * `p`: pauses the game
+* `q`: quits the game and exits
 
 ### AI Player
 ```

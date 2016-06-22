@@ -74,7 +74,10 @@ class Game(object):
 
     def exit(self):
         """Exits the program."""
+        self.end_game()
         self.board_drawer.return_screen_to_normal()
+        print('Game Over! Final Score: {}'.format(int(self.board.score)))
+        sys.exit(0)
 
     def start_ticking(self):
         self.last_tick = datetime.datetime.now()
@@ -114,6 +117,7 @@ class Game(object):
             10: self.board.drop_shape,
             13: self.board.drop_shape,
             112: self.pause_game,
+            113: self.exit,
         }
         move_fn = moves.get(user_input)
         if move_fn:
