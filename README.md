@@ -1,6 +1,8 @@
 # tetris
 A command line tetris game you can play in your terminal!
 
+![AI Playing Tetris](demo.gif)
+
 ## To Play
 ```
 git clone https://github.com/alexandrinaw/tetris.git
