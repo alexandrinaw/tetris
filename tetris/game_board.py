@@ -302,7 +302,8 @@ class BoardDrawer(object):
         stdscr = self.stdscr
         stdscr.refresh()
 
-    def return_screen_to_normal(self):
+    @staticmethod
+    def return_screen_to_normal():
         """Undoes the weird settings to the terminal isn't screwed up when the game is over"""
         curses.endwin()
 

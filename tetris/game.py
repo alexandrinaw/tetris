@@ -1,6 +1,8 @@
 import curses
 import datetime
 import math
+import signal
+import sys
 
 from game_board import Board, BoardDrawer, GameOverError
 from players import Human, AI
@@ -119,6 +121,12 @@ class Game(object):
             if piece_moved:
                 self.board_drawer.update(self.board)
 
+
+def signal_handler(signal, frame):
+    BoardDrawer.return_screen_to_normal()
+    sys.exit(0)
+
+signal.signal(signal.SIGINT, signal_handler)
 
 if __name__ == '__main__':
     main()
