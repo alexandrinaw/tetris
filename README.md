@@ -1,5 +1,7 @@
+[![Build Status](https://travis-ci.org/alexandrinaw/tetris.svg?branch=master)](https://travis-ci.org/alexandrinaw/tetris)
+
 # tetris
-A command line tetris game you can play in your terminal!
+A command line tetris game you (or an AI!) can play in your terminal!
 
 ![AI Playing Tetris](demo.gif)
 
