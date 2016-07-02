@@ -20,25 +20,16 @@ class Shape(object):
         self.column_position = column
         self.row_position = row
         self.color = color or self._get_random_color()
-        self.orientation = orientation or self._get_random_orientation()
+        if orientation is not None:
+            self.orientation = orientation
+        else:
+            self.orientation = self._get_random_orientation()
         self.blocks = []
         self._initialize_blocks()
 
     def __eq__(self, other):
         return (self.row_position == other.row_position
                 and self.column_position == other.column_position)
-
-    def __repr__(self):
-        bps = self.block_positions[self.orientation]
-        empty_matrix = [
-            [' ' for _ in range(4)]
-            for _ in range(4)]
-        ret = ''
-        for col, row in bps:
-            empty_matrix[row][col] = 'X'
-        for row in empty_matrix:
-            ret += '\n' + ''.join(row)
-        return ret
 
     def _get_random_orientation(self):
         return randint(0, self.number_of_orientations-1)
