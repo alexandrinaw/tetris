@@ -37,7 +37,6 @@ class Game(object):
         self.board_drawer = BoardDrawer()
         self.board_drawer.clear_score()
         self.board.start_game()
-        self.board.new_shape()
 
     def pause_game(self):
         """Pauses or unpauses the game."""

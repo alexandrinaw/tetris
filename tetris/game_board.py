@@ -2,7 +2,7 @@ import copy
 import curses
 import math
 
-from pieces import Shape
+from tetris.pieces import Shape
 
 
 NUM_COLUMNS = 10
@@ -37,6 +37,7 @@ class Board(object):
         self.level = 1
         if self.next_shape is None:
             self.next_shape = Shape.random(PREVIEW_COLUMN, PREVIEW_ROW)
+            self.new_shape()
 
     def end_game(self):
         raise GameOverError(score=self.score, level=self.level)
